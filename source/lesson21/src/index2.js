@@ -1,1 +1,0 @@
-console.log('webpack learning infdsaffdsaddex2')

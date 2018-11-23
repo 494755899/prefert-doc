@@ -1,13 +1,19 @@
 ---
 home: true
 actionText: 快速学习 →
-actionLink: /concepts/howInstall
+actionLink: /layout/layout
 features:
-- title: 通用配置详解
-  details: 通过demo的形式把在工程中通用的配置进行详细解说
-- title: 错误详解
-  details: 通过报错的形式让学习者尽量少走坑,讲解一些在配置中通常会遇到的报错情况
-- title: 开发环境和生产性能详解
-  details: 在搭建一套webpack配置的时候，通常生产环境和开发环境都需要进行特定的配置
+- title: 规范化
+  details: 项目规范对于团队开发相当有利。像nuxt一样,任何目录文件有着各自的职责，而成昆管理系统架构足够给到了后台管理系统散乱的问题
+- title: 组件化
+  details: 相对于后台管理系统而言大多数是ui库为主,页面分解又能让数据很方便的流动。而成昆管理系统内部通过大量的分解机制让页面组件化更加简单
+- title: 自动化
+  details: 后台管理系统的模式大多相同。以表格分页等为主。如何减少代码的重复编写。和自动化操作内部机制。成昆系统有着很好的组件封装
+- title: 适配化
+  details: 如何保证pc版本多视口度整页的自动视配这让使用者能提高很大的体验，成昆系统中对模式组件和页面进行了视口的自动监听适配
+- title: 配置化
+  details: 成昆系统减速少代码重复编写和机械模式编写,通过配置文件对路由,resultful接口,特定页面缓存等进行了配置文件的配置
+- title: 模块化
+  details: 模块化很好的组织代码的可读性,维护性，成昆系统中对模块化方案也做的独有特色。
 footer: MIT Licensed | Copyright © 混元霹雳手
 ---

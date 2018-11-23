@@ -1,18 +1,12 @@
 module.exports = {
-    base: '/Webpack-learning/',
-    title: 'Webpack learning',
-    description: 'webpack学习指南',
+    base: '/prefert-doc/',
+    title: '成昆',
+    description: '成昆后台管理系统架构',
     themeConfig: {
         sidebar: {
-          '/concepts/': [
-            'howInstall', /* install安装 */
-            'concept', /* concepts概念 */
-            'entry', /* entry入口 */
-            'configuration', /* configuration配置 */
-            'output', /* output 输出 */
-            'loader', /* loader 转换器 */
-            'plugins', /* plugins 插件 */
-            'mode' /* 模式 */
+          '/layout/': [
+            'layout', /* 布局 */
+            'mokuai' /* 文件模块方式 */
           ],
         },
         nav: [

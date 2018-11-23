@@ -1,1 +1,0 @@
-console.log('webpack learninfdsaffdsasg index1')
