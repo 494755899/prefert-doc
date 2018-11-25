@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>组织页面结构 | 成昆</title>
+    <meta name="description" content="成昆后台管理系统架构">
+    
+    
+    <link rel="preload" href="/prefert-doc/assets/css/0.styles.e111b224.css" as="style"><link rel="preload" href="/prefert-doc/assets/js/app.7ae8b776.js" as="script"><link rel="preload" href="/prefert-doc/assets/js/3.a01a401b.js" as="script"><link rel="prefetch" href="/prefert-doc/assets/js/2.a8dc4200.js"><link rel="prefetch" href="/prefert-doc/assets/js/4.f2770c2d.js"><link rel="prefetch" href="/prefert-doc/assets/js/5.bc306d72.js"><link rel="prefetch" href="/prefert-doc/assets/js/6.abcb6487.js"><link rel="prefetch" href="/prefert-doc/assets/js/7.5edbadd9.js"><link rel="prefetch" href="/prefert-doc/assets/js/8.b4523e17.js">
+    <link rel="stylesheet" href="/prefert-doc/assets/css/0.styles.e111b224.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/prefert-doc/" class="home-link router-link-active"><!----> <span class="site-name">成昆</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/prefert-doc/" class="nav-link">Home</a></div><div class="nav-item"><a href="/prefert-doc/concepts/howInstall.html" class="nav-link">concepts(概念)</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/prefert-doc/" class="nav-link">Home</a></div><div class="nav-item"><a href="/prefert-doc/concepts/howInstall.html" class="nav-link">concepts(概念)</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/prefert-doc/layout/layout.html" class="sidebar-link">整体布局图布局</a></li><li><a href="/prefert-doc/layout/mokuai.html" class="sidebar-link">模块化分</a></li><li><a href="/prefert-doc/layout/pagebianxie.html" class="active sidebar-link">组织页面结构</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/prefert-doc/layout/pagebianxie.html#编写路由页面结构" class="sidebar-link">编写路由页面结构</a></li><li class="sidebar-sub-header"><a href="/prefert-doc/layout/pagebianxie.html#如何给特定的路由页面进行缓存" class="sidebar-link">如何给特定的路由页面进行缓存</a></li><li class="sidebar-sub-header"><a href="/prefert-doc/layout/pagebianxie.html#配置弹窗页面" class="sidebar-link">配置弹窗页面</a></li><li class="sidebar-sub-header"><a href="/prefert-doc/layout/pagebianxie.html#如何对弹窗页面进行缓存数据" class="sidebar-link">如何对弹窗页面进行缓存数据</a></li><li class="sidebar-sub-header"><a href="/prefert-doc/layout/pagebianxie.html#如何对弹窗页面传递数据和方法" class="sidebar-link">如何对弹窗页面传递数据和方法</a></li><li class="sidebar-sub-header"><a href="/prefert-doc/layout/pagebianxie.html#如何打开欠套弹窗页面" class="sidebar-link">如何打开欠套弹窗页面</a></li></ul></li><li><a href="/prefert-doc/layout/mixins.html" class="sidebar-link">mixins的混合方法和混合数据</a></li></ul> </div> <div class="page"> <div class="content"><h1 id="组织页面结构"><a href="#组织页面结构" aria-hidden="true" class="header-anchor">#</a> 组织页面结构</h1> <p>通过对整体项目的模块化分了解之后。进入正题，如何组织页面和组织页面结构。页面的结构如对路由项进行同步配置生成一个完成的页面结构体</p> <h2 id="编写路由页面结构"><a href="#编写路由页面结构" aria-hidden="true" class="header-anchor">#</a> 编写路由页面结构</h2> <p>进入<code>src/pages</code></p> <div class="language- extra-class"><pre class="language-text"><code>-----classfi (创建一个最外层的包裹文件夹)
+ |-----firstClass (创建一个对一级分类操作的文件夹)
+   |-----index.vue (一级分类的入口文件)
+ |-----secondClass (创建一个对二级分类的操作的文件夹 )
+   |-----index.vue (二级分类的入口文件) 
+</code></pre></div><p>虽然页面结构写好，就像我们所写的一样。我们需要展示的左则菜单栏也要对应的写入这样结构体。此时我们需要路由配置文件进行配置</p> <p>进行src/config/menu.js</p> <div class="language- extra-class"><pre class="language-text"><code>export default [
+  {
+    name: '分类',
+    children: [
+      {
+        name: '产品分类',
+        path: '/classfi/firstClass/index'
+      },
+      {
+        name: '风格分类',
+        path: '/classfi/secondClass/index'
+      }
+    ]
+  }
+]
+</code></pre></div><p>此时路由会自动生成，而且是懒加载的模式。当点击到对应的页面才会自动对应的页面文件。在成昆系统内部会自动给我们进行加载和解析</p> <blockquote><p>配置字段说明</p></blockquote> <ol><li><code>name</code>是配置的菜单名</li> <li><code>path</code>是配置当点对应的菜单的时候将会跳转到对应那个路由页面。可以发现路由的路径是通过文件名进行生成。想进入一级分类的时候,直接定位到的pages目录，文件层级一层一层向下找。直到最后对应的.vue文件。</li></ol> <div class="tip custom-block"><p class="custom-block-title">好处</p> <p>当页面量大的时候。可以通过路由直接定位到当前页面的文件的位置，通过配置文件自动生成对应的路由和菜单的导航,同时又解决了性能懒加载的问题</p></div> <blockquote><p>成生的结果</p></blockquote> <img src="/prefert-doc/assets/img/layout2.26f69f46.jpeg" alt="alt text" title="Title"> <h2 id="如何给特定的路由页面进行缓存"><a href="#如何给特定的路由页面进行缓存" aria-hidden="true" class="header-anchor">#</a> 如何给特定的路由页面进行缓存</h2> <p>上面已经对如何编写一个路由页面进行了讲解。所有路由页面的是非缓存的方式,如果想达到对某个路由页面达到<code>keepAlive</code>缓存的作用的时候。需要进行对应页面的配置</p> <p>此时如果我们想对<code>firstClass</code>中<code>index.vue</code>页面进行配置的情况下</p> <p>进行src/pages/classfi/firstClass/index.vue</p> <div class="language- extra-class"><pre class="language-text"><code>export default {
+  name: 'firstClass'
+}
+</code></pre></div><p>打开<code>src/config/cache.js</code></p> <div class="language- extra-class"><pre class="language-text"><code>export default {
+  pageCache: ['firstClass']
+}
+</code></pre></div><p>此时<code>firstClass/index.vue</code>中的路由页面将会被缓存。<code>created</code>方法进入一次之后不再会被执行。而<code>actived</code>方法将会生效。</p> <h2 id="配置弹窗页面"><a href="#配置弹窗页面" aria-hidden="true" class="header-anchor">#</a> 配置弹窗页面</h2> <p>通常弹窗页面是我们开发中必不可少的情况。比如说以下情况</p> <img src="/prefert-doc/assets/img/layout5.36cbe52b.png" alt="alt text" title="Title"> <p>当我们点击修改或者新增的时候需要执行某些操作的时候。需要配置对应的弹窗页面。那配置这些弹窗页面是如何配置的呢？有什么规范呢？</p> <blockquote><p>在firstClass页面中配置一个弹窗页面</p></blockquote> <p>进入src/pages</p> <div class="language- extra-class"><pre class="language-text"><code>-----classfi (创建一个最外层的包裹文件夹)
+ |-----firstClass (创建一个对一级分类操作的文件夹)
+   |-----index.vue (一级分类的入口文件)
+  +|-----d_add.vue (点击新增的时候弹出的页面) 
+ |-----secondClass (创建一个对二级分类的操作的文件夹 )
+   |-----index.vue (二级分类的入口文件) 
+</code></pre></div><p>在<code>firstClass</code>文件夹中新增了一个<code>d_add.vue</code>的文件。如上图点击新增或者修改的时候，需要弹出一些页面让用户操作的时候。当用弹窗页面展示的时候需要对文件名进行<code>d_</code>开头的配置。</p> <div class="tip custom-block"><p class="custom-block-title">提示</p> <p>这里再提示一下，为了文件名的规范和开发者寻找代码的一目了解,内部对弹窗页面的名称进行一个规范的约定,必须以<code>d_</code>开头,成昆系统内部会进行检测，如果没有以<code>d_</code>开头会报错</p></div> <p>进入<code>firstClass/index.js</code></p> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+ &lt;div&gt;
+   &lt;p onClick=&quot;add&quot;&gt;新增&lt;paper-dialog&gt;
+ &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  methods: {
+    add () {
+      this._openDialog({
+        name: '/classfi/firstClass/d_add'
+      })
+    }
+  }
+}
+&lt;/script&gt;
+</code></pre></div><p>调用成昆系统内部混入的<code>_openDialog</code>方法传入<code>name</code>参数。<code>name</code>参数则是此弹窗页面文件从<code>pages</code>目录下开始算起的寻找</p> <p>进入<code>firstClass/d_add.vue</code>页面</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+&lt;paper-dialog title=&quot;新增产品分类&quot;&gt;
+  &lt;p&gt;这个是添加的弹窗页面&lt;/p&gt;
+&lt;/paper-dialog&gt;
+&lt;template&gt;
+</code></pre></div><p>通过这样的配置之后。当点击新增的时候将会弹是出对应的弹窗页面。</p> <img src="/prefert-doc/assets/img/layout6.df6e7315.jpeg" alt="alt text" title="fdsa"> <p>如上图展示,我们希望的弹窗页面已经如原完成了,当点击取消和关闭按钮或者遮照层的时候会关闭弹窗页面。</p> <div class="tip custom-block"><p class="custom-block-title">注意</p> <p>想弹出弹窗页面的时候必须写入<code>paper-dialog</code>全局注册的组件，关于<code>paper-dialog</code>详细的配置后续会讲解。</p></div> <h2 id="如何对弹窗页面进行缓存数据"><a href="#如何对弹窗页面进行缓存数据" aria-hidden="true" class="header-anchor">#</a> 如何对弹窗页面进行缓存数据</h2> <p>弹窗页面不是欠入在路由中，所以通过路由配置的缓存是不生效的。当关闭对应的弹窗页面的时候,再次打开对应的页面的时候，如何可以很好的缓存数据？</p> <p>在全局配置中是对所有的弹窗页面不进行缓存，当关闭的时候。再次打开就是一个初始化状态。</p> <p>如果我们需要对某个弹窗页面进行缓存，再次打开能留原本的数据的时候，数据还是存在。内部的工作原理其实就是对该组件的中<code>data</code>数据进行一个保存。</p> <p>进入<code>firstClass/index.js</code></p> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+ &lt;div&gt;
+   &lt;p onClick=&quot;add&quot;&gt;新增&lt;paper-dialog&gt;
+ &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  methods: {
+    add () {
+      this._openDialog({
+       +cache: true, 
+        name: '/classfi/firstClass/d_add'
+      })
+    }
+  }
+}
+&lt;/script&gt;
+</code></pre></div><p>此时我们只要在指定打开某个弹窗页面的时候添加一个<code>cache</code>为<code>true</code>的属性。此时这个弹窗中的所有<code>data</code>数据在弹窗页面销毁之后再次打开还能还原原来的数据。</p> <hr> <p>虽然指定了弹窗页面的缓存。但是通过菜单栏点击切换路由页面的时候。会导致所有的弹窗页面的缓存不再生效。此时我们可以通过配置文件进行更新。如果想当切换路由页面的时候，任何路由页面中的弹窗页面仍然可以进行缓存的话。</p> <p>进入src/config/cache.js</p> <div class="language- extra-class"><pre class="language-text"><code>clearDialogCache: false,  默认为true
+</code></pre></div><p>只要通过<code>clearDialogCache</code>设置为<code>false</code>的时候。当切换路由页面的时候所有弹窗页面的缓存仍然存在。</p> <h2 id="如何对弹窗页面传递数据和方法"><a href="#如何对弹窗页面传递数据和方法" aria-hidden="true" class="header-anchor">#</a> 如何对弹窗页面传递数据和方法</h2> <p>虽然我们这样对页面进行了很强大的解耦能力。但是数据的和方法传递是工程逻辑中必不可少的一个事情。
+现在有一个这样的需求。<code>index</code>页面中的需要修改数据。但是修改数据的操作是在弹窗页面进行完成的。此时我们需要把<code>index</code>页面的中的数据和修改后执行更改数据的动作告诉弹窗页面的时候。我们需要传递对应的数据和方法。</p> <p>进入<code>firstClass/index.js</code></p> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+ &lt;div&gt;
+   &lt;p onClick=&quot;add&quot;&gt;新增&lt;paper-dialog&gt;
+  +&lt;p&gt;{{name}}&lt;p&gt;
+ &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  +data () {
+  +  return {
+  +    name: '成昆‘
+    }
+  },
+  methods: {
+  +changeName (name) {
+  +   this.name = name
+  +}
+    add () {
+      this._openDialog({
+        name: '/classfi/firstClass/d_add',
+       +data: {
+       +  name: this.name
+        },
+       +methods: {
+       +  changeName: this.changeName
+       } 
+      })
+    }
+  }
+}
+&lt;/script&gt;
+</code></pre></div><p>可以发现我们向弹窗页面传递一个数据和方法是多么简单。数据就放在<code>data</code>选项中，方法则放在<code>methods</code>选项中。和<code>vue</code>的选项<code>api</code>保持一致。内部会通过<code>extends</code>方法进行合并。</p> <p>进入<code>firstClass/d_add.vue</code>页面</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+&lt;paper-dialog title=&quot;新增产品分类&quot;&gt;
+  &lt;p&gt;这个是添加的弹窗页面&lt;/p&gt;
+  &lt;input v-model=&quot;inputName&quot;/&gt;
+  &lt;div @click=&quot;submit&quot;&gt;确认修改&lt;/div&gt;
+&lt;/paper-dialog&gt;
+&lt;template&gt;
+&lt;script&gt;
+  export default {
+   + created () {
+   +   this.inputName = this.name
+    },
+   + data () {
+      return {
+   +     inputName ''
+      },
+   + methods: {
+   +    submit () {
+   +    this.changeName(this.inputName)
+        }
+      }
+    }
+  }
+&lt;/script&gt;
+</code></pre></div><p>在弹页面中我们可以通过<code>this</code>实列获取到路由页面传递来的数据和方法。然后进行特定的操作</p> <div class="tip custom-block"><p class="custom-block-title">注意</p> <p>弹窗页面定义的数据和方法不要与路由页面传递过来的方法名和数据名一致，不然在extends数据合并策略的时候会被覆盖。</p></div> <h2 id="如何打开欠套弹窗页面"><a href="#如何打开欠套弹窗页面" aria-hidden="true" class="header-anchor">#</a> 如何打开欠套弹窗页面</h2> <p>在弹窗页面中有一个打开一个欠套的弹窗页面如何打开？打开一个弹窗页面和打开多个弹窗页面是一样的。所有的机制在成昆中都已经帮你解决了，只需要对代码进行编写就可以了</p> <p>进入<code>firstClass/d_add.vue</code>页面</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+&lt;paper-dialog title=&quot;新增产品分类&quot;&gt;
+  &lt;p&gt;这个是添加的弹窗页面&lt;/p&gt;
++ &lt;p @click=&quot;anotherDialog&quot;&gt;打开一个欠套的弹窗页面&lt;/p&gt;
+&lt;/paper-dialog&gt;
+&lt;template&gt;
+&lt;script&gt;
++export default {
++  methods: {
++    anotherDialog () {
++      this._openDialog({
++        name: '/classfi/firstClass/d_anotherDialog'
++      })
+    }
+  }
+}
+&lt;/script&gt;
+
+</code></pre></div><p>在第一个弹窗页面添加一个点击事件,通过<code>_openDialog</code>方法进行打开弹窗页面的方法</p> <p>进入src/pages</p> <div class="language- extra-class"><pre class="language-text"><code>-----classfi (创建一个最外层的包裹文件夹)
+ |-----firstClass (创建一个对一级分类操作的文件夹)
+   |-----index.vue (一级分类的入口文件)
+   |-----d_add.vue (点击新增的时候弹出的页面) 
+   |-----d_anotherDialog.vue (欠套的弹窗页面)
+ |-----secondClass (创建一个对二级分类的操作的文件夹 )
+   |-----index.vue (二级分类的入口文件) 
+</code></pre></div><p>配置欠套的弹窗页面
+进入<code>firstClass/d_anotherDialog.vue</code>页面</p> <div class="language- extra-class"><pre class="language-text"><code>&lt;template&gt;
+  &lt;paper-dialog title=&quot;欠套的弹窗页面&quot;&gt;
+    &lt;p&gt;这是添加欠套的弹窗页面&lt;/p&gt;
+  &lt;/paper-dialog&gt;
+&lt;/template&gt;
+
+</code></pre></div><p>经过这三方面的配置,可以尝试进行点击。效如果下图:</p> <img src="/prefert-doc/assets/img/layout7.45a2c41d.jpeg" alt="alt text" title="fdsa"></div> <div class="page-edit"><!----> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/prefert-doc/layout/mokuai.html" class="prev">
+          模块化分
+        </a></span> <span class="next"><a href="/prefert-doc/layout/mixins.html">
+          mixins的混合方法和混合数据
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/prefert-doc/assets/js/3.a01a401b.js" defer></script><script src="/prefert-doc/assets/js/app.7ae8b776.js" defer></script>
+  </body>
+</html>

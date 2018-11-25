@@ -7,14 +7,14 @@
     <meta name="description" content="成昆后台管理系统架构">
     
     
-    <link rel="preload" href="/prefert-doc/assets/css/0.styles.e111b224.css" as="style"><link rel="preload" href="/prefert-doc/assets/js/app.4465a288.js" as="script"><link rel="preload" href="/prefert-doc/assets/js/5.df2736ac.js" as="script"><link rel="prefetch" href="/prefert-doc/assets/js/2.2e74a65d.js"><link rel="prefetch" href="/prefert-doc/assets/js/3.ee8e4010.js"><link rel="prefetch" href="/prefert-doc/assets/js/4.57db8596.js"><link rel="prefetch" href="/prefert-doc/assets/js/6.d8f4d9a2.js">
+    <link rel="preload" href="/prefert-doc/assets/css/0.styles.e111b224.css" as="style"><link rel="preload" href="/prefert-doc/assets/js/app.7ae8b776.js" as="script"><link rel="preload" href="/prefert-doc/assets/js/7.5edbadd9.js" as="script"><link rel="prefetch" href="/prefert-doc/assets/js/2.a8dc4200.js"><link rel="prefetch" href="/prefert-doc/assets/js/3.a01a401b.js"><link rel="prefetch" href="/prefert-doc/assets/js/4.f2770c2d.js"><link rel="prefetch" href="/prefert-doc/assets/js/5.bc306d72.js"><link rel="prefetch" href="/prefert-doc/assets/js/6.abcb6487.js"><link rel="prefetch" href="/prefert-doc/assets/js/8.b4523e17.js">
     <link rel="stylesheet" href="/prefert-doc/assets/css/0.styles.e111b224.css">
   </head>
   <body>
-    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/prefert-doc/" class="home-link router-link-active"><!----> <span class="site-name">成昆</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/prefert-doc/" class="nav-link">Home</a></div><div class="nav-item"><a href="/prefert-doc/concepts/howInstall.html" class="nav-link">concepts(概念)</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/prefert-doc/" class="nav-link">Home</a></div><div class="nav-item"><a href="/prefert-doc/concepts/howInstall.html" class="nav-link">concepts(概念)</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/prefert-doc/layout/layout.html" class="sidebar-link">整体布局图布局</a></li><li><a href="/prefert-doc/layout/mokuai.html" class="active sidebar-link">模块化分</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/prefert-doc/layout/mokuai.html#assets-目录" class="sidebar-link">assets 目录</a></li><li class="sidebar-sub-header"><a href="/prefert-doc/layout/mokuai.html#components-目录" class="sidebar-link">components 目录</a></li><li class="sidebar-sub-header"><a href="/prefert-doc/layout/mokuai.html#config目录" class="sidebar-link">config目录</a></li><li class="sidebar-sub-header"><a href="/prefert-doc/layout/mokuai.html#filter目录" class="sidebar-link">filter目录</a></li></ul></li></ul> </div> <div class="page"> <div class="content"><h1 id="模块化分"><a href="#模块化分" aria-hidden="true" class="header-anchor">#</a> 模块化分</h1> <p>成昆系统对模块的化分非常清楚，每个模块负责着不同的角色和功能,整个工程是基于vue-cli搭建而成，主要关注src目录</p> <h2 id="assets-目录"><a href="#assets-目录" aria-hidden="true" class="header-anchor">#</a> assets 目录</h2> <p>存放静态图片和一些静态css</p> <p>assets目录结构</p> <div class="language- extra-class"><pre class="language-text"><code> ---css
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/prefert-doc/" class="home-link router-link-active"><!----> <span class="site-name">成昆</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/prefert-doc/" class="nav-link">Home</a></div><div class="nav-item"><a href="/prefert-doc/concepts/howInstall.html" class="nav-link">concepts(概念)</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/prefert-doc/" class="nav-link">Home</a></div><div class="nav-item"><a href="/prefert-doc/concepts/howInstall.html" class="nav-link">concepts(概念)</a></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/prefert-doc/layout/layout.html" class="sidebar-link">整体布局图布局</a></li><li><a href="/prefert-doc/layout/mokuai.html" class="active sidebar-link">模块化分</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/prefert-doc/layout/mokuai.html#assets-目录" class="sidebar-link">assets 目录</a></li><li class="sidebar-sub-header"><a href="/prefert-doc/layout/mokuai.html#components-目录" class="sidebar-link">components 目录</a></li><li class="sidebar-sub-header"><a href="/prefert-doc/layout/mokuai.html#config目录" class="sidebar-link">config目录</a></li><li class="sidebar-sub-header"><a href="/prefert-doc/layout/mokuai.html#filter目录" class="sidebar-link">filter目录</a></li><li class="sidebar-sub-header"><a href="/prefert-doc/layout/mokuai.html#mixins目录" class="sidebar-link">mixins目录</a></li><li class="sidebar-sub-header"><a href="/prefert-doc/layout/mokuai.html#pages目录" class="sidebar-link">pages目录</a></li><li class="sidebar-sub-header"><a href="/prefert-doc/layout/mokuai.html#server目录" class="sidebar-link">server目录</a></li><li class="sidebar-sub-header"><a href="/prefert-doc/layout/mokuai.html#util目录" class="sidebar-link">util目录</a></li></ul></li><li><a href="/prefert-doc/layout/pagebianxie.html" class="sidebar-link">组织页面结构</a></li><li><a href="/prefert-doc/layout/mixins.html" class="sidebar-link">mixins的混合方法和混合数据</a></li></ul> </div> <div class="page"> <div class="content"><h1 id="模块化分"><a href="#模块化分" aria-hidden="true" class="header-anchor">#</a> 模块化分</h1> <p>成昆系统对模块的化分非常清楚，每个模块负责着不同的角色和功能,整个工程是基于<code>vue-cli</code>和<code>element-ui</code>搭建而成，主要关注<code>src</code>目录</p> <h2 id="assets-目录"><a href="#assets-目录" aria-hidden="true" class="header-anchor">#</a> assets 目录</h2> <p>存放静态图片和一些静态<code>css</code></p> <p><code>assets</code>目录结构</p> <div class="language- extra-class"><pre class="language-text"><code> ---css
  ---image
  ---font
-</code></pre></div><h2 id="components-目录"><a href="#components-目录" aria-hidden="true" class="header-anchor">#</a> components 目录</h2> <p>针对于后台管理系统，主要存在的有页面的布局组件,关于布局组件是基本定死，不需要关注。同样里面有基于普遍后台开发模式基于element-ui封装便捷开发者使用的组件系统，同样自己也要以存放自己便捷的开发的组件。</p> <p>components目录结构</p> <div class="language- extra-class"><pre class="language-text"><code>----layout
+</code></pre></div><h2 id="components-目录"><a href="#components-目录" aria-hidden="true" class="header-anchor">#</a> components 目录</h2> <p>针对于后台管理系统，主要存在的有页面的布局组件,关于布局组件是基本定死，不需要关注。同样里面有基于普遍后台开发模式基于<code>element-ui</code>封装便捷开发者使用的组件系统，同样自己也要以存放自己便捷的开发的组件。</p> <div class="language- extra-class"><pre class="language-text"><code>----layout
   |----PaperAside.vue  左侧菜单组件
   |----PaperHeader.vue  头部组件
   |----PaperBread.vue  内容区域内部导航组件
@@ -22,16 +22,42 @@
 ----baseElement
   |----PaperDialog.vue 基于element封装的弹窗页面组件
   |----PaperTable.vue 基于element封装的表格列表自动化组件
-  |----更多敬请期待
-</code></pre></div><p>对于layout文件中是大家不需要关心的内容,是对页面自动运行布局等工程中的封装组件。而baseElement是对简化自动化模式的操作而封装的一系列组件,关于组件详细的内容[请点击这里]</p> <h2 id="config目录"><a href="#config目录" aria-hidden="true" class="header-anchor">#</a> config目录</h2> <p>config主要是进行配置化的操作。工程内部自动化运行需要进行特定的配置。</p> <div class="language- extra-class"><pre class="language-text"><code>----api.js  // 基于resultful配置接口
+  |----index.js 把baseElement的组件写入之后，将会进行全局注册
+  |----更多封装组件敬请期待
+</code></pre></div><p>对于<code>layout</code>文件中是大家不需要关心的内容,是对页面自动运行布局等工程中的封装组件。而<code>baseElement</code>是对简化自动化模式的操作而封装的一系列组件</p> <h2 id="config目录"><a href="#config目录" aria-hidden="true" class="header-anchor">#</a> config目录</h2> <p><code>config</code>主要是进行配置化的操作。工程内部自动化运行需要进行特定的配置。</p> <div class="language- extra-class"><pre class="language-text"><code>----api.js  // 基于resultful配置接口
 ----cache.js // 设置页面缓存和全局弹窗页面缓存的机制
 ----menu.js // 左侧菜单的配置
-</code></pre></div><ol><li>api主要配置了所有了接口的请求，主要是针对于resultful接口的配置</li> <li>cache通过name属性针对特定页面进行缓存处理</li> <li>通过menu对左侧菜单自动化运行配置</li></ol> <p>想知道配置的具体使用[请点击这里]</p> <h2 id="filter目录"><a href="#filter目录" aria-hidden="true" class="header-anchor">#</a> filter目录</h2> <p>filter主要是对值进行过滤，充当过滤器的使用,学过vue的都知道，通过一些过滤函数。解决常用的比如对时间过滤等存放的目录</p> <div class="language- extra-class"><pre class="language-text"><code>----formatTime.js 对时间格式进行处理
-</code></pre></div><p>关于过滤器的更多内容[请点击这里]</p></div> <div class="page-edit"><!----> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+</code></pre></div><ol><li><code>api</code>主要配置了所有了接口的请求，主要是针对于<code>resultful</code>接口的配置</li> <li><code>cache</code>通过<code>name</code>属性针对特定页面进行缓存处理和全局弹窗页面进行缓存的配置</li> <li>通过<code>menu</code>对左侧菜单自动化运行配置</li></ol> <p>想知道配置的具体使用[请点击这里]</p> <h2 id="filter目录"><a href="#filter目录" aria-hidden="true" class="header-anchor">#</a> filter目录</h2> <p><code>filter</code>主要是对值进行过滤，充当过滤器的使用,学过<code>vue</code>的都知道，通过一些过滤函数。解决常用的比如对时间过滤等存放的目录</p> <div class="language- extra-class"><pre class="language-text"><code>-----gobal
+  |--formatTime.js 对时间格式进行处理
+  |--index.js 对filter进行全局的导出注册
+</code></pre></div><p>关于通用的<code>filter</code>过滤器存放在<code>gobal</code>页面中，在<code>index.j</code>s页面进行全局注册</p> <h2 id="mixins目录"><a href="#mixins目录" aria-hidden="true" class="header-anchor">#</a> mixins目录</h2> <p><code>mixins</code>主要是为全局混入一些公用的<code>api</code>，方法或者数据。</p> <div class="language- extra-class"><pre class="language-text"><code>----gobal
+ |--paperMixins.js 工程内部提供的全局混入
+ |--elementMxins.js 基于elementui 各个组件提供的内置方法的混入
+ |--index.js 引入到index中进行全局混合
+</code></pre></div><p>关于<code>paperMixins</code>我们不需要关心做了什么。后续会介绍里面提供的全局方法。</p> <h2 id="pages目录"><a href="#pages目录" aria-hidden="true" class="header-anchor">#</a> pages目录</h2> <p><code>pages</code>是存放所有路由页面和弹窗页面或者子页面的存放的模块。但是内容有着一定的规范写法。这样会强制约束大家的页面组织，对弹窗页面和路由页面进行一个很好的区分。同时任何模式的页面是根据文件的位置和文件名自动生成的</p> <div class="language- extra-class"><pre class="language-text"><code>page1 最外层的显示模块
+  |----subpage1 模块中的某个页面
+    |--index.vue 入口
+    |--another.vue  子页面
+    |--d_add.vue  弹窗页面
+  |----subpage2
+    |--index.vue
+    |--another.vue
+    |--d_add.vue
+</code></pre></div><p>关于<code>pages</code>页面的组织和规范用法[请点击这里]</p> <h2 id="server目录"><a href="#server目录" aria-hidden="true" class="header-anchor">#</a> server目录</h2> <p>对于<code>server</code>模块来说。主要对<code>axios</code>进行了一系列的封装.</p> <div class="language- extra-class"><pre class="language-text"><code>---index.js  // axios的封装
+---api.js  // 基于resultful接口使用的封装
+</code></pre></div><p>关于<code>server</code>模块的具体使用请[点击这里]</p> <h2 id="util目录"><a href="#util目录" aria-hidden="true" class="header-anchor">#</a> util目录</h2> <p>util存放的都是一些工具函数。</p> <div class="language- extra-class"><pre class="language-text"><code>----buildIn
+ |--bus.js
+ |--getPath.js
+ |--initGobal.js
+</code></pre></div><p>关于<code>buildIn</code>中的方法都是一些项目工程组织的内部方法。不需要关心。</p></div> <div class="page-edit"><!----> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
         ←
         <a href="/prefert-doc/layout/layout.html" class="prev">
           整体布局图布局
-        </a></span> <!----></p></div> </div> <!----></div></div>
-    <script src="/prefert-doc/assets/js/5.df2736ac.js" defer></script><script src="/prefert-doc/assets/js/app.4465a288.js" defer></script>
+        </a></span> <span class="next"><a href="/prefert-doc/layout/pagebianxie.html">
+          组织页面结构
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/prefert-doc/assets/js/7.5edbadd9.js" defer></script><script src="/prefert-doc/assets/js/app.7ae8b776.js" defer></script>
   </body>
 </html>
